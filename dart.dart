@@ -1,15 +1,20 @@
-void main() {
-  int num1 = 10;//whole number
-  double num2 = 10.22;//floating number
-  String StudentName = "Allan Obuya";//text value stored in a string
-  List<String> Subjects = ["Kiswahili", "English", "Maths"];// list containing strings only
-  Map<String,int> Grades = {"Kiswahili": 90,"English": 70,"Maths": 50}; // a list containing different values
-  bool isStudentPassed = true;//it answers the question has the student passed?
-  print("Student Name is $StudentName");
-  print("age is $num1");
-  print("weight is $num2");
-  print("subject is $Subjects");
-  print("grades is $Grades");
-  print("Has student passed is $isStudentPassed");
+import 'dart:io';
 
+void main() {
+  // Prompt the user for a number
+  stdout.write('Enter a number: ');
+  
+  // Read user input as a string and convert it to an integer
+  int? number = int.tryParse(stdin.readLineSync()!);
+
+
+  if (number == null) {
+    print('Invalid input. Please enter a valid number.');
+  } else if (number > 10) {
+    print('Your number is greater than 10');
+  } else if (number < 10) {
+    print('Your number is less than 10');
+  } else {
+    print('Your number is equal to 10');
+  }
 }
